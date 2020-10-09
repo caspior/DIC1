@@ -210,7 +210,7 @@ ggplot() +
 
 # Trip patterns change
 
-```{r}
+```{r, message=FALSE, results='hide'}
 library(tigris)
 library(leaflet)
 library(tmap)
