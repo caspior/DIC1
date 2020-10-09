@@ -18,9 +18,9 @@ Pre-cleaning:
 -more than 500 mile trip distance.
 -more than 24hr trip drip duration.
 
-### Creating clone:
+### Scooters only:
 ```{r}
-scooters <- df
+scooters <- df[which(df$vehicle_type=="scooter"),]
 ```
 
 ### Additional cleaning:
