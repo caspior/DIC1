@@ -12,3 +12,11 @@ The data is based on two sources:
 
 The data was analyzed using R Studio.
 Preliminary results that include descriptive statistics can be found [here].
+
+The diagrams show that scooter ridership decreased and almost stopped in March but increased in May as COVID cases in Austin went up. The overall effect of COVID on the number of trips is positive. Findings regarding trip distance and duration show that each trip's average distance decreased with COVID, but the average duration did not change significantly. With that, the increase of ridership results in a total rise in usage duration and, therefore, an increase in the scooter's revenue.
+
+This study will include the following analyses:
+- Comparison of usage between March - December 2020 to March - December 2019 in order to control for seasonality.
+- Spatial analysis to examine the change in trip origin-destination patterns due to COVID.
+- A combination of random forest analysis and time series regression analysis with control variables such as weather, day of the week, and holidays.
+- Comparison to bikesharing usage, transit usage, and car ridership during the same period.
