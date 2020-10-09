@@ -89,8 +89,7 @@ sixty[which(sixty$job_month==11),"nov"] <- 1
 by60 <- group_by(sixty[which(sixty$job_year>=1990 & sixty$job_year<=2012),], job_year)
 by60 <- summarise(by60, jobs=n(), nov=sum(nov))
 by60$other <- round((by60$jobs - by60$nov)/11,0)
-```
-```{r}
+
 chisq.test(x=by60$nov,y=by60$other)
 ```
 
