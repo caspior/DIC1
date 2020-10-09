@@ -85,7 +85,7 @@ for (j in 1:100) {
     E[j] <- E[j] + P[i]*i
   }
 }
-print(paste("The propability that will give the max expected value is",E[which.is.max(E)]))
+print(paste("The probability that will give the max expected value is",E[which.is.max(E)]))
 ```
 
 
