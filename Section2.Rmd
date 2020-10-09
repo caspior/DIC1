@@ -92,26 +92,3 @@ by60$other <- round((by60$jobs - by60$nov)/11,0)
 
 chisq.test(x=by60$nov,y=by60$other)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
