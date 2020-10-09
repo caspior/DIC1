@@ -1,0 +1,97 @@
+---
+title: "Section3"
+author: "Or Caspi"
+date: "10/9/2020"
+output: html_document
+---
+
+### Question 1+2
+```{r}
+pi <- 0.5
+N <- 5
+P <- vector()
+E <- 0
+Var <- 0
+
+for (i in 1:N){
+  P[i] <- (factorial(N)/(factorial(i)*factorial(N-i)))*pi^i*(1-pi)^(N-i)
+  E <- E + P[i]*i
+  Var <- Var + i^2*P[i]
+}
+Var <- Var - E
+SD <- sqrt(Var)
+print(paste("The expected value for",N,"flips is",E,"and the standard deviation is",SD))
+```
+
+### Question 3+4
+```{r}
+N <- 15
+E <- 0
+
+for (i in 1:N){
+  P[i] <- (factorial(N)/(factorial(i)*factorial(N-i)))*pi^i*(1-pi)^(N-i)
+  E <- E + P[i]*i
+  Var <- Var + i^2*P[i]
+}
+Var <- Var - E
+SD <- sqrt(Var)
+print(paste("The expected value for",N,"flips is",E,"and the standard deviation is",SD))
+```
+
+### Question 5
+```{r}
+N <- 10
+P2 <- 0
+
+for (i in 1:N){
+  P[i] <- (factorial(N)/(factorial(i)*factorial(N-i)))*pi^i*(1-pi)^(N-i)
+  if (floor(log2(i)) == ceiling(log2(i))) P2 <- P2 + P[i]
+}
+print(paste("The probability of the score to be a power of 2 after",N,"flips is",P2))
+```
+
+### Question 6+7
+```{r}
+pi <- 2/3
+N <- 5
+P <- vector()
+E <- 0
+Var <- 0
+
+for (i in 1:N){
+  P[i] <- (factorial(N)/(factorial(i)*factorial(N-i)))*pi^i*(1-pi)^(N-i)
+  E <- E + P[i]*i
+  Var <- Var + i^2*P[i]
+}
+Var <- Var - E
+SD <- sqrt(Var)
+print(paste("The expected value for",N,"flips is",E,"and the standard deviation is",SD))
+```
+
+### Question 8
+```{r}
+library(nnet)
+
+N <- 10
+P <- vector()
+E <- vector()
+Var <- 0
+
+for (j in 1:100) {
+  pi <- 0.001 * j
+  E[j] <- 0
+  for (i in 1:N){
+    P[i] <- (factorial(N)/(factorial(i)*factorial(N-i)))*pi^i*(1-pi)^(N-i)
+    E[j] <- E[j] + P[i]*i
+  }
+}
+print(paste("The propability that will give the max expected value is",E[which.is.max(E)]))
+```
+
+
+
+
+
+
+
+
