@@ -11,7 +11,7 @@ The data is based on two sources:
 2. [Texas's COVID-19 daily cases by county](https://dshs.texas.gov/coronavirus/additionaldata.aspx)
 
 The data was analyzed using R Studio.
-Preliminary results that include descriptive statistics can be found [here].
+Preliminary results that include descriptive statistics can be found [here](https://htmlpreview.github.io/?https://raw.githubusercontent.com/caspior/DIC1/main/Section1.html).
 
 The diagrams show that scooter ridership decreased and almost stopped in March but increased in May as COVID cases in Austin went up. The overall effect of COVID on the number of trips is positive. Findings regarding trip distance and duration show that each trip's average distance decreased with COVID, but the average duration did not change significantly. With that, the increase of ridership results in a total rise in usage duration and, therefore, an increase in the scooter's revenue.
 
