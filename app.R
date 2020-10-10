@@ -3,10 +3,18 @@ library(leaflet)
 
 ui <- fluidPage(
   titlePanel("Difference in average daily shared scooter trips in Austin, Texas by census tract during the Covid-19 pandemic"),
-  selectInput("trips", "Trip direction:", c("Departures" = "dep", "Arrivals" = "arr")),
-  sliderInput("month_b", 'Choose the "before" month', value = 3, min = 3, max = 10),
-  sliderInput("month_a", 'Choose the "after" month', value = 4, min = 3, max = 10),
-  leafletOutput("map")
+  
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("trips", "Trip direction:", c("Departures" = "dep", "Arrivals" = "arr")),
+      sliderInput("month_b", 'Choose the "before" month', value = 3, min = 3, max = 10),
+      sliderInput("month_a", 'Choose the "after" month', value = 4, min = 3, max = 10)
+    ),
+  
+    mainPanel(
+      leafletOutput("map", height="650")
+    )
+  )
 )
 
 server <- function(input, output){
