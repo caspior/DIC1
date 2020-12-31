@@ -32,10 +32,10 @@ server <- function(input, output){
     austin <- geo_join(tracts, diff, "GEOID", "census_geoid_start")
     
     map <- leaflet(austin) %>% addTiles()
-    bins <- c(-Inf, -100, -10, -1, 0, 1, 10, 100, Inf)
+    bins <- c(-Inf, -100, -10, -1, 1, 10, 100, Inf)
     
     if (input$trips == "dep") {
-      pal <- colorBin("YlOrRd", domain=austin$dep, bins=bins)
+      pal <- colorBin("RdYlGn", domain=austin$dep, bins=bins)
         map %>%
           setView(-97.741, 30.27, 11) %>%
           addPolygons(
@@ -44,23 +44,23 @@ server <- function(input, output){
             opacity = 1,
             color = "white",
             dashArray = "3",
-            fillOpacity = 0.5,
+            fillOpacity = 0.7,
             highlight = highlightOptions(
               weight = 5,
               color = "#666",
               dashArray = "",
-              fillOpacity = 0.5,
+              fillOpacity = 0.7,
               bringToFront = TRUE),
           label = austin$dep,
           labelOptions = labelOptions(
             style = list("font-weight" = "normal", padding = "3px 8px"),
             textsize = "15px",
             direction = "auto")) %>%
-          addLegend(pal = pal, values = ~dep, opacity = 0.7, title = NULL,
+          addLegend(pal = pal, values = ~dep, opacity = 1, title = NULL,
                     position = "bottomright")
     }
     else {
-      pal <- colorBin("YlOrRd", domain=austin$arr, bins=bins)
+      pal <- colorBin("RdYlGn", domain=austin$arr, bins=bins)
       map %>%
         setView(-97.741, 30.27, 11) %>%
         addPolygons(
@@ -69,19 +69,19 @@ server <- function(input, output){
           opacity = 1,
           color = "white",
           dashArray = "3",
-          fillOpacity = 0.5,
+          fillOpacity = 0.7,
           highlight = highlightOptions(
             weight = 5,
             color = "#666",
             dashArray = "",
-            fillOpacity = 0.5,
+            fillOpacity = 0.7,
             bringToFront = TRUE),
           label = austin$arr,
           labelOptions = labelOptions(
             style = list("font-weight" = "normal", padding = "3px 8px"),
             textsize = "15px",
             direction = "auto")) %>%
-        addLegend(pal = pal, values = ~arr, opacity = 0.7, title = NULL,
+        addLegend(pal = pal, values = ~arr, opacity = 1, title = NULL,
                   position = "bottomright")
     }
   })
